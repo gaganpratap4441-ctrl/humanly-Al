@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humanly AI - Humanize Your Text</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080b12;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:bold}
+.logo span,h1 span{color:#a78bfa}
+.tag{color:#bbb;font-size:13px}
+main{max-width:950px;margin:65px auto;padding:20px}
+.hero{text-align:center;margin-bottom:40px}
+.hero p{color:#b9a4ff;letter-spacing:3px}
+h1{font-size:clamp(36px,7vw,58px);margin:15px 0}
+.sub{color:#aaa;line-height:1.7}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#121725;border:1px solid #303447;border-radius:18px;padding:20px}
+h3{margin-top:0}
+textarea{width:100%;height:210px;background:#080b12;color:white;border:1px solid #34394b;border-radius:12px;padding:14px;resize:vertical}
+select,button{width:100%;padding:14px;border-radius:10px;margin-top:15px}
+select{background:#080b12;color:white;border:1px solid #34394b}
+button{background:#8b5cf6;color:white;border:0;font-weight:bold;font-size:16px}
+button:active{opacity:.8}
+#result{white-space:pre-wrap;min-height:210px;color:#ddd;line-height:1.6}
+footer{text-align:center;color:#777;padding:30px;font-size:13px}
+@media(max-width:650px){.panel{grid-template-columns:1fr}main{margin:35px auto}.hero{margin-bottom:25px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">humanly<span>.</span></div>
+<div class="tag">AI WRITING ASSISTANT</div>
+</header>
+<main>
+<section class="hero">
+<p>WRITE NATURALLY</p>
+<h1>Make AI text sound <span>human.</span></h1>
+<div class="sub">Rewrite your words in a clear and natural voice.</div>
+</section>
+<section class="panel">
+<div class="card">
+<h3>Your text</h3>
+<textarea id="input" placeholder="Paste your text here..."></textarea>
+<h3>Choose a tone</h3>
+<select id="tone">
+<option>Just humanize</option>
+<option>Funny</option>
+<option>Inspiring</option>
+<option>Dramatic</option>
+<option>Sarcastic</option>
+<option>Friendly</option>
+<option>Professional</option>
+</select>
+<button onclick="humanize()">Humanize text →</button>
+</div>
+<div class="card">
+<h3>Your result</h3>
+<div id="result">Your rewritten text will appear here...</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Humanly AI</footer>
+<script>
+function humanize(){
+const text=document.getElementById('input').value.trim();
+if(!text){alert('Please paste your text first.');return;}
+document.getElementById('result').textContent=
+'Your text is ready. AI rewriting will be connected in the next setup step.';
+}
+</script>
+</body>
+</html>
